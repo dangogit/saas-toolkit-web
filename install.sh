@@ -122,7 +122,7 @@ print_done "Resend MCP added"
 print_info "Set your key: claude mcp update resend -e RESEND_API_KEY=re_xxx"
 
 print_installing "PostHog MCP (analytics, feature flags)"
-npx @posthog/wizard@latest mcp add 2>/dev/null || true
+claude mcp add --transport http posthog https://mcp.posthog.com/sse 2>/dev/null || true
 print_done "PostHog MCP added"
 
 print_installing "Polar.sh MCP (products, subscriptions)"
