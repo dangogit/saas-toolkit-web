@@ -1,6 +1,6 @@
-# saas-toolkit-web
+# ncode-saas-toolkit-web
 
-Web development track extension for saas-toolkit. Part of the nCode course ecosystem.
+Web development track extension for ncode-saas-toolkit. Part of the nCode course ecosystem.
 
 ## Stack
 
@@ -22,4 +22,4 @@ Default auth provider is Google OAuth via Supabase Auth. Always set up:
 
 ## Requires
 
-Base plugin: `dangogit/saas-toolkit`
+Base plugin: `dangogit/ncode-saas-toolkit`

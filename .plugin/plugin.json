@@ -1,12 +1,12 @@
 {
-  "name": "saas-toolkit-web",
+  "name": "ncode-saas-toolkit-web",
   "version": "3.0.0",
-  "description": "Web development track extension for saas-toolkit. Next.js + Supabase + Vercel + Vercel AI SDK + Gemini + Polar.sh + Resend. Part of the nCode course ecosystem.",
+  "description": "Web development track extension for ncode-saas-toolkit. Next.js + Supabase + Vercel + Vercel AI SDK + Gemini + Polar.sh + Resend. Part of the nCode course ecosystem.",
   "author": {
     "name": "Daniel Goldman",
     "url": "https://danielthegoldman.com"
   },
-  "repository": "https://github.com/dangogit/saas-toolkit-web",
+  "repository": "https://github.com/dangogit/ncode-saas-toolkit-web",
   "license": "MIT",
   "keywords": [
     "saas",

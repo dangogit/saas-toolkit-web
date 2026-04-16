@@ -1,4 +1,4 @@
-# saas-toolkit-web
+# ncode-saas-toolkit-web
 
 Web development track extension for Claude Code. Part of the nCode course by Daniel Goldman.
 
@@ -6,10 +6,10 @@ Web development track extension for Claude Code. Part of the nCode course by Dan
 
 ```bash
 # Requires base plugin first
-claude plugin add dangogit/saas-toolkit
+claude plugin add dangogit/ncode-saas-toolkit
 
 # Then install web extension
-claude plugin add dangogit/saas-toolkit-web
+claude plugin add dangogit/ncode-saas-toolkit-web
 ```
 
 ## What's Included

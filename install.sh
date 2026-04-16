@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# nCode saas-toolkit-web Installer
-# https://github.com/dangogit/saas-toolkit-web
+# nCode ncode-saas-toolkit-web Installer
+# https://github.com/dangogit/ncode-saas-toolkit-web
 #
 # Installs the web track plugin + all marketplace skills + MCP servers.
-# Run the base installer first: danielthegoldman.com/saas-toolkit/install.sh
+# Run the base installer first: danielthegoldman.com/ncode-saas-toolkit/install.sh
 
 # -----------------------------------------
 # Colors & helpers
@@ -40,10 +40,10 @@ echo -e "${BOLD}${CYAN}|  Next.js + Supabase + Vercel + AI SDK + Gemini  |${RESE
 echo -e "${BOLD}${CYAN}+================================================+${RESET}"
 echo ""
 echo -e "  This installer will set up:"
-echo -e "  ${GREEN}+${RESET} saas-toolkit-web plugin (3 custom skills)"
+echo -e "  ${GREEN}+${RESET} ncode-saas-toolkit-web plugin (3 custom skills)"
 echo -e "  ${GREEN}+${RESET} Vercel plugin (Next.js, AI SDK, shadcn, deployment)"
 echo -e "  ${GREEN}+${RESET} 7 marketplace skills (AI SDK, Supabase RLS, Polar, Resend, PostHog)"
-echo -e "  ${GREEN}+${RESET} 6 MCP servers (Supabase, Vercel, Resend, PostHog, Polar, Gemini)"
+echo -e "  ${GREEN}+${RESET} 7 MCP servers (Supabase, Vercel, Resend, PostHog, Polar, Gemini, Snyk)"
 echo ""
 read -r -p "  Press Enter to continue, or Ctrl+C to cancel... "
 
@@ -52,10 +52,10 @@ read -r -p "  Press Enter to continue, or Ctrl+C to cancel... "
 # =========================================
 
 print_step "Installing web track plugin"
-print_installing "dangogit/saas-toolkit-web"
-claude plugin add dangogit/saas-toolkit-web 2>/dev/null && \
-  print_done "saas-toolkit-web installed" || \
-  print_done "saas-toolkit-web already installed"
+print_installing "dangogit/ncode-saas-toolkit-web"
+claude plugin add dangogit/ncode-saas-toolkit-web 2>/dev/null && \
+  print_done "ncode-saas-toolkit-web installed" || \
+  print_done "ncode-saas-toolkit-web already installed"
 
 print_step "Installing Vercel plugin"
 print_installing "vercel-plugin (Next.js, AI SDK, shadcn, deployment)"
@@ -101,6 +101,26 @@ print_installing "PostHog analytics"
 npx skills add alinaqi/claude-bootstrap@posthog-analytics -g -y 2>/dev/null
 print_done "posthog-analytics"
 
+print_installing "SEO audit (Section 6 - Web Advanced)"
+npx skills add yahav-marketing/yahav-skills@seo-audit -g -y 2>/dev/null
+print_done "seo-audit"
+
+print_installing "OWASP security check (Section 8 - Pro Topics)"
+npx skills add alinaqi/claude-bootstrap@owasp-security-check -g -y 2>/dev/null
+print_done "owasp-security-check"
+
+print_installing "Landing page design"
+npx skills add yahav-marketing/yahav-skills@landing-page-design -g -y 2>/dev/null
+print_done "landing-page-design"
+
+print_installing "Internationalizing websites (Hebrew/English)"
+npx skills add alinaqi/claude-bootstrap@internationalizing-websites -g -y 2>/dev/null
+print_done "internationalizing-websites"
+
+print_installing "Fullstack eval (live testing Next.js + Supabase)"
+npx skills add alinaqi/claude-bootstrap@fullstack-eval -g -y 2>/dev/null
+print_done "fullstack-eval"
+
 # =========================================
 # MCP SERVERS
 # =========================================
@@ -134,6 +154,11 @@ claude mcp add gemini -s user -- npx -y @rlabs-inc/gemini-mcp 2>/dev/null
 print_done "Gemini MCP added"
 print_info "Set your key: claude mcp update gemini -e GEMINI_API_KEY=your_key"
 
+print_installing "Snyk MCP (security scanning: code + dependencies + IaC)"
+claude mcp add snyk -s user -- npx -y snyk@latest mcp 2>/dev/null
+print_done "Snyk MCP added"
+print_info "Authenticate with: run 'snyk auth' in terminal (free tier sufficient)"
+
 # -----------------------------------------
 # Done!
 # -----------------------------------------
@@ -143,9 +168,9 @@ echo -e "${BOLD}${GREEN}|        Web track ready!                         |${RES
 echo -e "${BOLD}${GREEN}+================================================+${RESET}"
 echo ""
 echo -e "  ${BOLD}What was installed:${RESET}"
-echo -e "  saas-toolkit-web plugin + vercel-plugin"
+echo -e "  ncode-saas-toolkit-web plugin + vercel-plugin"
 echo -e "  8 marketplace skills (AI SDK, RLS, Polar, Resend, Supabase, PostHog)"
-echo -e "  6 MCP servers (Supabase, Vercel, Resend, PostHog, Polar, Gemini)"
+echo -e "  7 MCP servers (Supabase, Vercel, Resend, PostHog, Polar, Gemini, Snyk)"
 echo ""
 echo -e "  ${BOLD}API keys to configure:${RESET}"
 echo -e "  ${CYAN}1.${RESET} Supabase: get a Personal Access Token from supabase.com/dashboard/account/tokens"
