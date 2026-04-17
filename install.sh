@@ -45,7 +45,6 @@ echo -e "  ${GREEN}+${RESET} Vercel plugin (Next.js, AI SDK, shadcn, deployment)
 echo -e "  ${GREEN}+${RESET} 7 marketplace skills (AI SDK, Supabase RLS, Polar, Resend, PostHog)"
 echo -e "  ${GREEN}+${RESET} 7 MCP servers (Supabase, Vercel, Resend, PostHog, Polar, Gemini, Snyk)"
 echo ""
-read -r -p "  Press Enter to continue, or Ctrl+C to cancel... "
 
 # =========================================
 # PLUGINS
