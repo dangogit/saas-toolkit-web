@@ -1,0 +1,21 @@
+{
+  "name": "ncode-saas-toolkit-web",
+  "owner": {
+    "name": "Daniel Goldman",
+    "url": "https://danielthegoldman.com"
+  },
+  "metadata": {
+    "description": "nCode Web track - Next.js + Supabase + Vercel + AI SDK + Gemini",
+    "version": "4.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ncode-saas-toolkit-web",
+      "source": "./plugins/ncode-saas-toolkit-web",
+      "description": "Web development track: Next.js, Supabase, Vercel, Vercel AI SDK, Gemini, Polar, Resend",
+      "version": "4.0.0",
+      "category": "development",
+      "tags": ["saas", "ncode", "nextjs", "supabase", "vercel", "web"]
+    }
+  ]
+}

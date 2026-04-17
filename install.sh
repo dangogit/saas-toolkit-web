@@ -51,14 +51,16 @@ echo ""
 # =========================================
 
 print_step "Installing web track plugin"
-print_installing "dangogit/ncode-saas-toolkit-web"
-claude plugin add dangogit/ncode-saas-toolkit-web 2>/dev/null && \
+print_installing "Adding marketplace: dangogit/ncode-saas-toolkit-web"
+claude plugin marketplace add https://github.com/dangogit/ncode-saas-toolkit-web 2>/dev/null
+print_installing "Installing plugin"
+claude plugin install ncode-saas-toolkit-web 2>/dev/null && \
   print_done "ncode-saas-toolkit-web installed" || \
   print_done "ncode-saas-toolkit-web already installed"
 
 print_step "Installing Vercel plugin"
 print_installing "vercel-plugin (Next.js, AI SDK, shadcn, deployment)"
-claude plugin add vercel-plugin 2>/dev/null && \
+claude plugin install vercel-plugin 2>/dev/null && \
   print_done "vercel-plugin installed" || \
   print_done "vercel-plugin already installed"
 
